@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WeatherApp</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="styling.css" />
+   
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans:ital,wght@0,400;0,700;1,400&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  </head>
+  <body>
+    <div class="container weatherApp">
+     
+        <form class="search" id="form">
+          <input type="text" class="searchBox" id="box" placeholder="Type city..." />
+          <input type="submit" class="searchButton" value="search" />
+        </form>
+       <button id="locationButton" value="my location">My Location</button>
+
+        <h1 class="city">Tel Aviv</h1>
+        <h3 class="date" id="time">Monday   21:00 </h3> 
+        <h3 class="date" id="fullDate"> September 20th, 2021</h3>
+        <div class="current">
+          <span class="currentEmoji">☀</span>
+          <span class="currentTemp" id=currentTemp>24</span>
+          <a class= "unit" id="celcius" href="">°C</a> 
+        </div>
+
+        
+          <div class="row">
+            <div class="col">
+              <div class="day" id="day2">Tue</div>
+              <div class="emoji">☀</div>
+              <div class="temp">20°</div>
+            </div>
+            <div class="col">
+              <div class="day" id="day3">Wed</div>
+              <div class="emoji">🌧</div>
+              <div class="temp">20°</div>
+            </div>
+            <div class="col">
+              <div class="day" id="day4">Thu</div>
+              <div class="emoji">❄</div>
+              <div class="temp">20°</div>
+            </div>
+            <div class="col">
+              <div class="day" id="day5">Fri</div>
+              <div class="emoji">🌥</div>
+              <div class="temp">20°</div>
+            </div>
+            <div class="col-1">
+              <div class="day" id="day6">Sat</div>
+              <div class="emoji">☀</div>
+              <div class="temp">20°</div>
+            </div>
+          </div>
+        </div>
+    </div>
+     <script src="script.js"></script>
+  </body>
+</html>

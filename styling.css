@@ -1,0 +1,144 @@
+.weatherApp {
+  border: solid;
+  border-color: gray;
+  border-width: thin;
+  border-radius: 20px;
+  background: radial-gradient(
+    circle at 10% 20%,
+    rgb(253, 239, 132, 0.5) 2%,
+    rgb(247, 198, 169, 0.5) 54.2%,
+    rgb(21, 186, 196, 0.5) 100.3%
+  );
+  padding-right: 30px;
+  box-shadow: 0 2px 2px 0 rgb(0 0 0 / 16%), 0 0 0 1px rgb(0 0 0 / 8%);
+  padding-bottom: 50px;
+  width: 600px;
+  margin-bottom: 20px;
+}
+
+.search {
+  display: inline;
+}
+
+.searchBox {
+  background-color: rgb(255, 255, 255, 0.5);
+  padding-right: 30px;
+  padding-top: 6px;
+  padding-bottom: 10px;
+  border-style: solid black;
+  border-radius: 5px;
+  border-width: 0.1px;
+  font-style: italic;
+  margin-top: 30px;
+}
+
+.searchButton {
+  background: rgb(217, 237, 253);
+  font-family: "Balsamiq Sans", cursive;
+  padding: 8px;
+  border: solid black;
+  border-width: 0.1px;
+  border-radius: 5px;
+  color: rgb(68, 41, 158);
+  transition: all 200ms ease;
+}
+
+.searchButton:hover {
+  background: rgb(20, 45, 76);
+  color: white;
+  cursor: pointer;
+}
+
+#locationButton {
+  display: inline;
+  background-color: rgb(255, 235, 187);
+  font-family: "Balsamiq Sans", cursive;
+  padding: 5px 20px;
+  margin-left: 140px;
+  border: solid black;
+  border-width: 0.1px;
+  border-radius: 5px;
+  color: rgb(68, 41, 158);
+  transition: all 200ms ease;
+}
+
+#locationButton:hover {
+  background: rgb(20, 45, 76);
+  color: white;
+  cursor: pointer;
+}
+
+.city {
+  font-size: 60px;
+  font-family: "Balsamiq Sans", cursive;
+  color: rgb(20, 45, 76);
+  font-weight: 400;
+  text-align: center;
+  margin-top: 80px;
+}
+
+#time {
+  padding-bottom: 20px;
+  padding-top: 10px;
+  word-spacing: 20px;
+}
+.date {
+  text-align: center;
+  font-size: 25px;
+  color: rgba(20, 45, 76, 0.6);
+  font-family: "Balsamiq Sans", cursive;
+}
+
+.current {
+  text-align: center;
+  margin-bottom: 120px;
+  margin-top: 40px;
+}
+.currentTemp {
+  width: 200px;
+  margin: auto;
+  margin-top: 40px;
+  margin-bottom: 120px;
+  padding-left: 35px;
+  font-size: 70px;
+  color: rgb(20, 45, 76);
+  font-family: "Balsamiq Sans", cursive;
+}
+
+.unit {
+  position: relative;
+  bottom: 30px;
+  font-family: "Balsamiq Sans", cursive;
+  font-size: 30px;
+  text-decoration: none;
+  padding-left: 20px;
+}
+
+#celcius {
+  color: black;
+  font-weight: bolder;
+}
+
+.currentEmoji {
+  position: relative;
+  top: -5px;
+  font-size: 50px;
+}
+
+.emoji {
+  font-size: 30px;
+}
+
+.day {
+  padding-left: 5px;
+  font-size: 20px;
+  font-family: "Balsamiq Sans", cursive;
+  color: rgb(20, 45, 76, 0.6);
+}
+
+.temp {
+  padding-left: 10px;
+  font-size: 20px;
+  font-family: "Balsamiq Sans", cursive;
+  color: rgb(20, 45, 76, 0.6);
+}
