@@ -3,6 +3,7 @@ function showTemp(response) {
   let city = document.querySelector(".city");
   city.innerHTML = response.data.name;
   temp.innerHTML = Math.round(response.data.main.temp);
+  displayDate(response.data.dt * 1000);
 }
 
 function searchCity(city) {
@@ -19,8 +20,8 @@ function handleSubmit(event) {
   searchCity(city);
 }
 
-function displayDate() {
-  let now = new Date();
+function displayDate(timeStamp) {
+  let update = new Date(timeStamp);
 
   let days = [
     "Sunday",
@@ -47,25 +48,25 @@ function displayDate() {
     "December",
   ];
 
-  let hour = now.getHours();
+  let hour = update.getHours();
 
-  let minutes = now.getMinutes();
+  let minutes = update.getMinutes();
   if (minutes < 10) {
-    minutes = `0${now.getMinutes()}`;
+    minutes = `0${update.getMinutes()}`;
   }
-  let day = days[now.getDay()];
+  let day = days[update.getDay()];
 
-  let currentTime = `${day} ${hour}:${minutes}`;
+  let currentTime = `updated at ${hour}:${minutes}`;
   let time = document.querySelector("#time");
   time.innerHTML = currentTime;
 
-  let month = months[now.getMonth()];
+  let month = months[update.getMonth()];
 
-  let date = now.getDate();
+  let date = update.getDate();
 
-  let year = now.getFullYear();
+  let year = update.getFullYear();
 
-  let fullDate = `${month} ${date}, ${year} `;
+  let fullDate = ` ${day}, ${month} ${date}, ${year} `;
   let htmlDate = document.querySelector("#fullDate");
   htmlDate.innerHTML = fullDate;
 }
@@ -81,8 +82,6 @@ function showPosition(position) {
 function myLocation() {
   navigator.geolocation.getCurrentPosition(showPosition);
 }
-
-let date = displayDate();
 
 searchCity("Tel Aviv");
 
