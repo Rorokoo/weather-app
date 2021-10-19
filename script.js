@@ -19,12 +19,16 @@ function changeToFahrenheit(event) {
   let temperatureElement = document.querySelector("#currentTemp");
   let fahrenheit = (celsius * 9) / 5 + 32;
   temperatureElement.innerHTML = Math.round(fahrenheit);
+  celsiusLink.style.color = "rgb(198, 190, 190)";
+  fahrenheitLink.style.color = "#0a58ca";
 }
 
 function changeToCelsius(event) {
   event.preventDefault();
   let temperatureElement = document.querySelector("#currentTemp");
   temperatureElement.innerHTML = Math.round(celsius);
+  fahrenheitLink.style.color = "rgb(198, 190, 190)";
+  celsiusLink.style.color = "#0a58ca";
 }
 
 function searchCity(city) {
