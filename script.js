@@ -3,6 +3,12 @@ function showTemp(response) {
   let city = document.querySelector(".city");
   city.innerHTML = response.data.name;
   temp.innerHTML = Math.round(response.data.main.temp);
+  let emoji = document.querySelector(".currentEmoji");
+  emoji.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}.png`
+  );
+  emoji.setAttribute("alt", response.data.weather[0].description);
   displayDate(response.data.dt * 1000);
 }
 

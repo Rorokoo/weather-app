@@ -5,9 +5,9 @@
   border-radius: 20px;
   background: radial-gradient(
     circle at 10% 20%,
-    rgb(253, 239, 132, 0.5) 2%,
-    rgb(247, 198, 169, 0.5) 54.2%,
-    rgb(21, 186, 196, 0.5) 100.3%
+    rgb(253, 239, 132, 1) 2%,
+    rgb(247, 198, 169, 1) 54.2%,
+    rgb(21, 186, 196, 1) 100.3%
   );
   padding-right: 30px;
   box-shadow: 0 2px 2px 0 rgb(0 0 0 / 16%), 0 0 0 1px rgb(0 0 0 / 8%);
@@ -92,12 +92,17 @@
   margin-bottom: 120px;
   margin-top: 40px;
 }
+
+.currentEmoji {
+  filter: brightness(50%);
+  margin-bottom: 50px;
+}
 .currentTemp {
   width: 200px;
   margin: auto;
   margin-top: 40px;
   margin-bottom: 120px;
-  padding-left: 35px;
+  padding-left: 10px;
   font-size: 70px;
   color: rgb(20, 45, 76);
   font-family: "Balsamiq Sans", cursive;
