@@ -4,6 +4,8 @@ function showTemp(response) {
   city.innerHTML = response.data.name;
   celsius = response.data.main.temp;
   temp.innerHTML = Math.round(celsius);
+  celsiusLink.style.color = "#0a58ca";
+  fahrenheitLink.style.color = "rgb(198, 190, 190)";
 
   let emoji = document.querySelector(".currentEmoji");
   emoji.setAttribute(
@@ -40,6 +42,8 @@ function searchCity(city) {
 }
 
 function handleSubmit(event) {
+  celsiusLink.style.color = "#0a58ca";
+  fahrenheitLink.color = "rgb(198, 190, 190)";
   event.preventDefault();
   let city = document.querySelector("#box").value;
   searchCity(city);

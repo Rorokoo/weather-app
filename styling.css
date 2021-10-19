@@ -109,7 +109,6 @@
 }
 
 .unit {
-  color: #0a58ca;
   position: relative;
   bottom: 30px;
   font-family: "Balsamiq Sans", cursive;
@@ -118,9 +117,13 @@
   padding-left: 20px;
 }
 
-#celcius {
-  color: black;
+#celsius {
+  color: #0a58ca;
   font-weight: bolder;
+}
+
+#fahrenheit {
+  color: rgb(198, 190, 190);
 }
 
 .currentEmoji {
