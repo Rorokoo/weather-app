@@ -2,7 +2,9 @@ function showTemp(response) {
   let temp = document.querySelector("#currentTemp");
   let city = document.querySelector(".city");
   city.innerHTML = response.data.name;
-  temp.innerHTML = Math.round(response.data.main.temp);
+  celsius = response.data.main.temp;
+  temp.innerHTML = Math.round(celsius);
+
   let emoji = document.querySelector(".currentEmoji");
   emoji.setAttribute(
     "src",
@@ -10,6 +12,19 @@ function showTemp(response) {
   );
   emoji.setAttribute("alt", response.data.weather[0].description);
   displayDate(response.data.dt * 1000);
+}
+
+function changeToFahrenheit(event) {
+  event.preventDefault();
+  let temperatureElement = document.querySelector("#currentTemp");
+  let fahrenheit = (celsius * 9) / 5 + 32;
+  temperatureElement.innerHTML = Math.round(fahrenheit);
+}
+
+function changeToCelsius(event) {
+  event.preventDefault();
+  let temperatureElement = document.querySelector("#currentTemp");
+  temperatureElement.innerHTML = Math.round(celsius);
 }
 
 function searchCity(city) {
@@ -88,6 +103,14 @@ function showPosition(position) {
 function myLocation() {
   navigator.geolocation.getCurrentPosition(showPosition);
 }
+
+let celsius = null;
+
+let fahrenheitLink = document.querySelector("#fahrenheit");
+let celsiusLink = document.querySelector("#celsius");
+
+fahrenheitLink.addEventListener("click", changeToFahrenheit);
+celsiusLink.addEventListener("click", changeToCelsius);
 
 searchCity("Tel Aviv");
 
