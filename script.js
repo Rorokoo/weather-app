@@ -128,3 +128,24 @@ search.addEventListener("submit", handleSubmit);
 
 let locationButton = document.querySelector("#locationButton");
 locationButton.addEventListener("click", myLocation);
+
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu"];
+  let forecastHTML = `<div class="row">`;
+
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `<div class="col">
+        <div class="day">${day}</div>
+        <img src=""> />
+        <div class="temp">20°</div>
+      </div>`;
+  });
+
+  console.log(forecastHTML);
+  forecastElement.innerHTML = forecastHTML + `</div>`;
+}
+
+displayForecast();
