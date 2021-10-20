@@ -137,7 +137,7 @@ function displayForecast() {
   days.forEach(function (day) {
     forecastHTML =
       forecastHTML +
-      `<div class="col">
+      `<div class="col text-center">
         <div class="day">${day}</div>
         <img src=""> />
         <div class="temp">20°</div>
