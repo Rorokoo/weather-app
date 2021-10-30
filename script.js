@@ -41,23 +41,30 @@ function getForecast(coordinates) {
   axios.get(apiUrl).then(displayForecast);
 }
 
+function formatDay(timeStamp) {
+  let date = new Date(timeStamp * 1000);
+  let day = date.getDay();
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+  return days[day];
+}
 function displayForecast(response) {
-  console.log(response.data.daily);
+  let forecast = response.data.daily;
   let forecastElement = document.querySelector("#forecast");
-  let days = ["Sun", "Mon", "Tue", "Wed", "Thu"];
   let forecastHTML = `<div class="row">`;
-  let i = 0;
 
-  days.forEach(function (day) {
-    let temp = Math.round(response.data.daily[i].temp.day);
-    forecastHTML =
-      forecastHTML +
-      `<div class="col text-center">
-        <div class="day">${day}</div>
-        <img src=""> />
+  forecast.forEach(function (forecastDay, i) {
+    if (i > 0 && i < 6) {
+      let temp = Math.round(forecastDay.temp.day);
+      forecastHTML =
+        forecastHTML +
+        `<div class="col text-center">
+        <div class="day">${formatDay(forecastDay.dt)}</div>
+        <img src="http://openweathermap.org/img/wn/${
+          forecastDay.weather[0].icon
+        }.png"> 
         <div class="temp">${temp}°</div>
       </div>`;
-    i = i + 1;
+    }
   });
 
   forecastElement.innerHTML = forecastHTML + `</div>`;
