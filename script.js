@@ -14,6 +14,8 @@ function showTemp(response) {
   );
   emoji.setAttribute("alt", response.data.weather[0].description);
   displayDate(response.data.dt * 1000);
+  let cityCoordinates = response.data.coord;
+  getForecast(cityCoordinates);
 }
 
 function changeToFahrenheit(event) {
@@ -31,6 +33,34 @@ function changeToCelsius(event) {
   temperatureElement.innerHTML = Math.round(celsius);
   fahrenheitLink.style.color = "rgb(198, 190, 190)";
   celsiusLink.style.color = "#0a58ca";
+}
+
+function getForecast(coordinates) {
+  let apiKey = "f5029b784306910c19746e40c14d6cd3";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(displayForecast);
+}
+
+function displayForecast(response) {
+  console.log(response.data.daily);
+  let forecastElement = document.querySelector("#forecast");
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu"];
+  let forecastHTML = `<div class="row">`;
+  let i = 0;
+
+  days.forEach(function (day) {
+    let temp = Math.round(response.data.daily[i].temp.day);
+    forecastHTML =
+      forecastHTML +
+      `<div class="col text-center">
+        <div class="day">${day}</div>
+        <img src=""> />
+        <div class="temp">${temp}°</div>
+      </div>`;
+    i = i + 1;
+  });
+
+  forecastElement.innerHTML = forecastHTML + `</div>`;
 }
 
 function searchCity(city) {
@@ -128,24 +158,5 @@ search.addEventListener("submit", handleSubmit);
 
 let locationButton = document.querySelector("#locationButton");
 locationButton.addEventListener("click", myLocation);
-
-function displayForecast() {
-  let forecastElement = document.querySelector("#forecast");
-  let days = ["Sun", "Mon", "Tue", "Wed", "Thu"];
-  let forecastHTML = `<div class="row">`;
-
-  days.forEach(function (day) {
-    forecastHTML =
-      forecastHTML +
-      `<div class="col text-center">
-        <div class="day">${day}</div>
-        <img src=""> />
-        <div class="temp">20°</div>
-      </div>`;
-  });
-
-  console.log(forecastHTML);
-  forecastElement.innerHTML = forecastHTML + `</div>`;
-}
 
 displayForecast();
