@@ -3,12 +3,6 @@
   border-color: gray;
   border-width: thin;
   border-radius: 20px;
-  /*background: radial-gradient(
-    circle at 10% 20%,
-    rgb(253, 239, 132, 1) 2%,
-    rgb(247, 198, 169, 1) 54.2%,
-    rgb(21, 186, 196, 1) 100.3%
-  );*/
   padding-right: 30px;
   box-shadow: 0 2px 2px 0 rgb(0 0 0 / 16%), 0 0 0 1px rgb(0 0 0 / 8%);
   padding-bottom: 50px;
@@ -55,7 +49,7 @@
   background-color: rgb(255, 235, 187);
   font-family: "Balsamiq Sans", cursive;
   padding: 5px 20px;
-  margin-left: 20%;
+  margin-left: 140px;
 
   border: solid black;
   border-width: 0.1px;

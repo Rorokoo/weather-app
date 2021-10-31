@@ -2,8 +2,11 @@ function showWeather(response) {
   let temp = document.querySelector("#currentTemp");
   let city = document.querySelector(".city");
   let description = document.querySelector("#description");
-  description.innerHTML = response.data.weather[0].description;
   let wind = document.querySelector("#wind");
+  let emoji = document.querySelector(".currentEmoji");
+  let cityCoordinates = response.data.coord;
+
+  description.innerHTML = response.data.weather[0].description;
   wind.innerHTML = `Wind: ${Math.round(
     (response.data.wind.speed * 18) / 5
   )} km/h`;
@@ -13,23 +16,28 @@ function showWeather(response) {
   temp.innerHTML = Math.round(celsius);
   celsiusLink.style.color = "#0a58ca";
   fahrenheitLink.style.color = "rgb(198, 190, 190)";
-  let emoji = document.querySelector(".currentEmoji");
+
   emoji.setAttribute(
     "src",
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}.png`
   );
   emoji.setAttribute("alt", response.data.weather[0].description);
   displayDate(response.data.dt * 1000);
-  let cityCoordinates = response.data.coord;
+
   getForecast(cityCoordinates);
 }
 
 function searchCity(city) {
   let key = "f5029b784306910c19746e40c14d6cd3";
   let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${key}&units=metric`;
-  let displayedCity = document.querySelector(".city");
-  displayedCity.innerHTML = city;
   axios.get(url).then(showWeather);
+}
+
+function formatDay(timeStamp) {
+  let date = new Date(timeStamp * 1000);
+  let day = date.getDay();
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+  return days[day];
 }
 
 function changeToFahrenheit(event) {
@@ -89,14 +97,8 @@ function changeToCelsius(event) {
   forecastElement.innerHTML = forecastHTML + `</div>`;
 }
 
-function formatDay(timeStamp) {
-  let date = new Date(timeStamp * 1000);
-  let day = date.getDay();
-  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
-  return days[day];
-}
-
 function displayForecast(response) {
+  console.log(response);
   forecast = response.data.daily;
   let forecastElement = document.querySelector("#forecast");
   let forecastHTML = `<div class="row">`;
