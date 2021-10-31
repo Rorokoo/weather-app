@@ -1,12 +1,18 @@
 function showTemp(response) {
+  console.log(response);
   let temp = document.querySelector("#currentTemp");
   let city = document.querySelector(".city");
+  let description = document.querySelector("#description");
+  let wind = document.querySelector("#wind");
+  wind.innerHTML = `Wind: ${Math.round(
+    (response.data.wind.speed * 18) / 5
+  )} km/h`;
+
   city.innerHTML = response.data.name;
   celsius = response.data.main.temp;
   temp.innerHTML = Math.round(celsius);
   celsiusLink.style.color = "#0a58ca";
   fahrenheitLink.style.color = "rgb(198, 190, 190)";
-
   let emoji = document.querySelector(".currentEmoji");
   emoji.setAttribute(
     "src",
@@ -16,6 +22,7 @@ function showTemp(response) {
   displayDate(response.data.dt * 1000);
   let cityCoordinates = response.data.coord;
   getForecast(cityCoordinates);
+  description.innerHTML = response.data.weather[0].description;
 }
 
 function changeToFahrenheit(event) {

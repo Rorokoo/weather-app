@@ -3,12 +3,12 @@
   border-color: gray;
   border-width: thin;
   border-radius: 20px;
-  background: radial-gradient(
+  /*background: radial-gradient(
     circle at 10% 20%,
     rgb(253, 239, 132, 1) 2%,
     rgb(247, 198, 169, 1) 54.2%,
     rgb(21, 186, 196, 1) 100.3%
-  );
+  );*/
   padding-right: 30px;
   box-shadow: 0 2px 2px 0 rgb(0 0 0 / 16%), 0 0 0 1px rgb(0 0 0 / 8%);
   padding-bottom: 50px;
@@ -50,10 +50,12 @@
 
 #locationButton {
   display: inline;
+
   background-color: rgb(255, 235, 187);
   font-family: "Balsamiq Sans", cursive;
   padding: 5px 20px;
   margin-left: 140px;
+
   border: solid black;
   border-width: 0.1px;
   border-radius: 5px;
@@ -72,39 +74,44 @@
   font-family: "Balsamiq Sans", cursive;
   color: rgb(20, 45, 76);
   font-weight: 400;
-  text-align: center;
+
   margin-top: 80px;
 }
 
 #time {
-  padding-bottom: 20px;
+  padding-bottom: 5px;
   padding-top: 10px;
 }
+
+#fullDate {
+  margin-bottom: 50px;
+}
 .date {
-  text-align: center;
   font-size: 25px;
   color: rgba(20, 45, 76, 0.6);
   font-family: "Balsamiq Sans", cursive;
 }
 
 .current {
-  text-align: center;
+  padding-left: 50px;
   margin-bottom: 120px;
-  margin-top: 40px;
 }
 
-.currentEmoji {
-  filter: brightness(50%);
-  margin-bottom: 50px;
-}
 .currentTemp {
   width: 200px;
   margin: auto;
-  margin-top: 40px;
-  margin-bottom: 120px;
+  margin-top: 100px;
+
   padding-left: 10px;
   font-size: 70px;
   color: rgb(20, 45, 76);
+  font-family: "Balsamiq Sans", cursive;
+}
+
+.info {
+  float: right;
+  font-size: 20px;
+  color: rgba(20, 45, 76, 0.6);
   font-family: "Balsamiq Sans", cursive;
 }
 
@@ -128,7 +135,7 @@
 
 .currentEmoji {
   position: relative;
-  top: -5px;
+  bottom: 25px;
   font-size: 50px;
 }
 
@@ -137,6 +144,7 @@ img {
 }
 
 .day {
+  margin-top: 60px;
   padding-left: 5px;
   font-size: 20px;
   font-family: "Balsamiq Sans", cursive;
